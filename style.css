@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+    --Inter:  'Inter', sans-serif;
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 3% 14%;
+    font-family: var(--Inter);
+    background-color: var(--Off-white);
+    color: var(--Very-dark-blue);
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .icon-menu {
+    width: 60px;
+    cursor: pointer;
+}
+nav ul {
+    list-style: none;
+    list-style-position: inside;
+    display: flex;
+    column-gap: 2.015rem;
+}
+nav ul li {
+    font-size: 1.0425rem;
+    color: var(--Dark-grayish-blue);
+    cursor: pointer;
+}
+nav ul li:hover {
+    color: var(--Soft-red);
+}
+section .grid {
+    margin: 3.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+}
+section .grid main img {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+}
+section .grid main .flex {
+    margin: 1.025rem 0;
+    display: flex;
+    gap: 3rem;
+}
+section .grid main .flex h1 {
+    font-size: 2.825rem;
+    font-weight: 900;
+    line-height: 1.05;
+}
+section .grid main .flex .column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+section .grid main .flex .column p {
+    font-size: 1rem;
+    line-height: 1.45;
+}
+section .grid main .flex .column button {
+    background-color: var(--Soft-red);
+    border: none;
+    color: var(--Off-white);
+    padding: 14px 30px;
+    font-family: var(--Inter);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-spacing: 0.15rem;
+    letter-spacing: 0.20rem;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.05);
+    cursor: pointer;
+}
+section .grid main .flex .column button:hover {
+    background-color: var(--Very-dark-blue);
+}
+section .grid aside {
+    background-color: var(--Very-dark-blue);
+    color: #fff;
+    padding: 1.75rem 1.5rem;
+}
+section .grid aside .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.725rem;
+}
+section .grid aside .container h2 {
+    font-size: 2.25rem;
+    color: var(--Soft-orange);
+}
+section .grid aside .container hr {
+    margin: 0.35rem 0;
+    border: none;
+    border-top: 1px solid #9797ae;
+}
+section .grid aside .container div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7rem;
+}
+section .grid aside .container div h4 {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+section .grid aside .container div h4:hover {
+    color: var(--Soft-orange);
+}
+section .grid aside .container div p {
+    color: #9797ae;
+    line-height: 1.65;
+    font-size: 1rem;
+}
+section .pro-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.65rem;
+}
+section .pro-container .flex {
+    display: flex;
+    column-gap: 1.25rem;
+}
+section .pro-container .flex img {
+    width: 100%;
+    max-width: 105px;
+}
+section .pro-container .flex > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+section .pro-container .flex > div h1 {
+    font-size: 2.25rem;
+    color: var(--Grayish-blue);
+}
+section .pro-container .flex > div p {
+    color: var(--Very-dark-blue);
+    line-height: 1.75;
+}
+
+@media only screen and (max-width: 1571px) {
+    body {
+        padding: 3% 5%;
+    }
+}
+
+@media only screen and (max-width: 1257px) {
+    body {
+        padding: 3%;
+    }
+    section .grid main .flex h1 {
+        font-size: 2.35rem;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    section  {
+        margin: 1rem 0;
+    }
+    section .grid {
+        grid-template-columns: 1fr;
+    }
+    section .pro-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    section .grid main .flex {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 566px) {
+    nav .icon-menu {
+        display: none;
+    }
+    nav ul .menu-hide img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    nav .icon-menu {
+        display: block;
+    }
+    nav ul {
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 2.85rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 65%;
+        padding: 25px;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.35s;
+    }
+    nav ul.active {
+        transform: translateX(0);
+        opacity: 1;
+        display: flex;
+    }
+    nav ul li {
+        font-size: 1.25rem;
+        color: var(--Very-dark-blue);
+    }
+    nav ul .menu-hide img {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
